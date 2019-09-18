@@ -13,13 +13,13 @@ namespace main_master {
     public partial class eagleboard {
         
         /// <summary>
-        /// testlit control.
+        /// all_lit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal testlit;
+        protected global::System.Web.UI.WebControls.Literal all_lit;
         
         /// <summary>
         /// gives_lit control.

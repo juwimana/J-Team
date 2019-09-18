@@ -28,7 +28,7 @@
 
 
   <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-      <asp:Literal ID="testlit" runat="server" />
+      <asp:Literal ID="all_lit" runat="server" />
           
    </div>
     
@@ -53,7 +53,29 @@
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css"    href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></link>
      <script>
-         $('#all').DataTable();
+         $('#all_board').DataTable(
+             {
+                 "lengthChange": false,
+                 "pageLength" : 20
+             });
+         $('.dataTables_length').addClass('bs-select');
+         $('#gives_board').DataTable(
+             {
+                 "lengthChange": false,
+                 "pageLength": 20
+             });
+         $('.dataTables_length').addClass('bs-select');
+         $('#project_board').DataTable(
+             {
+                 "lengthChange": false,
+                 "pageLength": 20
+             });
+         $('.dataTables_length').addClass('bs-select');
+         $('#poll_board').DataTable(
+             {
+                 "lengthChange": false,
+                 "pageLength": 20
+             });
          $('.dataTables_length').addClass('bs-select');
         </script>
 

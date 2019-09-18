@@ -12,20 +12,10 @@ namespace main_master
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
-
-            // testlit.Text = @"<table class=""table""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th> /thead> <tbody>" + @"< tr > < th scope = ""row"" >wwww</ th > < td >oooo</ td > < td >ijijijiji </ td > </ tr >" + "</tbody></table>";
-            // testlit.Text = @"<table class=""table""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th> <th scope=""col"">Handle</th> </tr> </thead> <tbody> <tr> <th scope=""row"">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th scope=""row"">2</th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th scope=""row"">3</th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> </table> <table class=""table""> <thead class=""thead-light""> <tr> <th scope=""col"">#</th> <th scope=""col"">First</th> <th scope=""col"">Last</th> <th scope=""col"">Handle</th> </tr> </thead> <tbody> <tr> <th scope=""row"">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th scope=""row"">2</th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th scope=""row"">3</th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> </table>";
-
-            testlit.Text = create_table_string();
-
-
-
-
-
-
-
-
+            all_lit.Text = create_table_string("all_board");
+            gives_lit.Text = create_table_string("gives_board");
+            project_lit.Text = create_table_string("project_board");
+            poll_lit.Text = create_table_string("poll_board");
 
 
         }
@@ -35,22 +25,17 @@ namespace main_master
 
 
 
-
-
             string row_string = @"<tr> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
-
+            //creates a row of a bootstrap table in html
 
             return row_string;
 
 
-
-
-
         }
 
-        string create_table_string() {
+        string create_table_string(string board) {
             string title;
-            string table_string = @"<table class=""table"" id= ""test""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th></tr> </thead> <tbody>";
+            string table_string = @"<table class=""table"" id= """ + board + @"""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th></tr> </thead> <tbody>";
            
             for (int i = 0; i < 500; i++)
            {
@@ -58,7 +43,7 @@ namespace main_master
                table_string = table_string + create_row("nothing", title, "Poll", DateTime.Now );
                 
             }
-
+            //combines rows of html table and spits out a whole table!
 
             table_string = table_string +  "</tbody></table>";
             return table_string;
