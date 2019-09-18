@@ -53,7 +53,7 @@
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css"    href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></link>
      <script>
-         $('#test').DataTable();
+         $('#all').DataTable();
          $('.dataTables_length').addClass('bs-select');
         </script>
 
