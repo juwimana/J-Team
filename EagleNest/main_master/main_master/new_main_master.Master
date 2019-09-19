@@ -1,40 +1,40 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="new_main_master.master.cs" Inherits="main_master.new_main_master" %>
+
 <!doctype html>
 <html>
 <head runat="server">
-	
-<!--Comment-->
-	
+
+    <!--Comment-->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Collapsible sidebar using Bootstrap 4</title>
 
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	
-	    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-    <link href="css/thumbnail-gallery.css" rel="stylesheet" />
-	
+    <link rel="stylesheet" href="thumbnail-gallery.css">
+
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="css/style4.css" rel="stylesheet" type="text/css">
-    <link href="css/style5.css" rel="stylesheet" type ="text/css"/>
+    <link href="css/style5.css" rel="stylesheet" type="text/css" />
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     <asp:ContentPlaceHolder ID="content_place_holder_head" runat="server">
-
     </asp:ContentPlaceHolder>
 </head>
 
 <body>
-	
-	
+
+
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -44,50 +44,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
 
-	<div class="wrapper " >
+    <div class="wrapper ">
         <!-- Sidebar  -->
         <nav id="sidebar" class="bg-danger">
-        <div class="sidebar-header bg-danger" >
-			
-            <h3>EagleIntern</h3>
-            <strong>EI</strong>
-			
-        </div>
-		
+            <div class="sidebar-header bg-danger">
+                <asp:ContentPlaceHolder ID="branding" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
 
-        <ul class="list-unstyled components bg-danger">
-            <li class="active ">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
-                    <i class="fas fa-archive " ></i>
-                    Archive
-                </a>
-                <ul class="collapse list-unstyled " id="homeSubmenu">
-                    <li>
-                        <a href="#" class="bg-danger">2019</a>
-                    </li>
-                    <li>
-                        <a href="#" class="bg-danger">2018</a>
-                    </li>
-                    <li>
-                        <a href="#" class="bg-danger">2017</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-edit"></i>
-                    Post
-                </a>
-				
-				
-				
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
-                    <i class="fas fa-copy"></i>
-                    Share
-                </a>
+
+            <ul class="list-unstyled components bg-danger">
+
+                <asp:ContentPlaceHolder ID="navigation" runat="server">
+                </asp:ContentPlaceHolder>
+
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
+                        <i class="fas fa-copy"></i>
+                        Share
+                    </a>
+                </li>
+
                 <ul class="collapse list-unstyled bg-danger" id="pageSubmenu">
                     <li>
-                        <a href="#" class="bg-danger">Eagle Blog</a>
+                        <a href="Blog/Main.aspx" class="bg-danger">Eagle Blog</a>
                     </li>
                     <li>
                         <a href="EagleGallery.aspx" class="bg-danger">Eagle Gallery</a>
@@ -99,49 +79,45 @@
                         <a href="EagleConnect.aspx" class="bg-danger">Eagle Connect</a>
                     </li>
                 </ul>
-            </li>
-        </ul>
+            </ul>
 
-    </nav>
+        </nav>
 
         <!-- Page Content  -->
         <div id="content">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
 
-                <button type="button" id="sidebarCollapse" class="btn btn-info bg-primary">
-                    <i class="fas fa-align-left"></i>
-                    <span>Toggle Sidebar</span>
-                </button>
-            </div>
-			
-		<!-- Search form -->
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">	
-			
-        </nav>
-       <asp:ContentPlaceHolder ID="content_place_holder_body" runat="server">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info bg-primary">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+
+                <!-- Search form -->
+                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            </nav>
+            <asp:ContentPlaceHolder ID="content_place_holder_body" runat="server">
 
                 <!--PUT BODY HERE! -->
 
-        </asp:ContentPlaceHolder>
-    
-     </div>
+            </asp:ContentPlaceHolder>
+
+        </div>
     </div>
-	    <script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });
         });
     </script>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-<script>
-    baguetteBox.run('.tz-gallery');
-</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
 
 </body>
 </html>
-
-

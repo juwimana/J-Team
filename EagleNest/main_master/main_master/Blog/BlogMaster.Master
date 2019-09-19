@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="BlogMaster.master.cs" Inherits="main_master.Blog.BlogMaster" %>
+
+<asp:Content ContentPlaceHolderID="content_place_holder_head" runat="server">
+    <asp:ContentPlaceHolder ID="content_place_holder_head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="branding" runat="server">
+    <h3>EagleBlog</h3>
+    <strong>EB</strong>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="navigation" runat="server">
+    <li>
+        <a href="Post.aspx">
+            <i class="fas fa-edit"></i>
+            Post
+        </a>
+    </li>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="content_place_holder_body" runat="server">
+    <asp:ContentPlaceHolder ID="content_place_holder_body" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

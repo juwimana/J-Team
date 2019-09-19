@@ -22,6 +22,24 @@ namespace main_master {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder content_place_holder_head;
         
         /// <summary>
+        /// branding control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder branding;
+        
+        /// <summary>
+        /// navigation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder navigation;
+        
+        /// <summary>
         /// content_place_holder_body control.
         /// </summary>
         /// <remarks>

@@ -1,6 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="EagleIntern.aspx.cs" Inherits="main_master.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
 </asp:Content>
+
+<asp:Content ContentPlaceHolderID="branding" runat="server">
+    <h3>EagleIntern</h3>
+    <strong>EI</strong>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="navigation" runat="server">
+    
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <div class="card mb-3" style="max-width: 100%;">
         <div class="row no-gutters">

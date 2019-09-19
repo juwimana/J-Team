@@ -67,6 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Blog\Followers.aspx" />
+    <Content Include="Blog\Following.aspx" />
+    <Content Include="Blog\Main.aspx" />
+    <Content Include="Blog\Post.aspx" />
+    <Content Include="Blog\User.aspx" />
+    <Content Include="Blog\View.aspx" />
     <Content Include="css\style5.css" />
     <Content Include="eagleboard.aspx" />
     <Content Include="images\1.jpg" />
@@ -97,6 +103,54 @@
     </Compile>
     <Compile Include="eagleboard.aspx.designer.cs">
       <DependentUpon>eagleboard.aspx</DependentUpon>
+    <Compile Include="Blog\BlogMaster.Master.cs">
+      <DependentUpon>BlogMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\BlogMaster.Master.designer.cs">
+      <DependentUpon>BlogMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Blog\Followers.aspx.cs">
+      <DependentUpon>Followers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\Followers.aspx.designer.cs">
+      <DependentUpon>Followers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog\Following.aspx.cs">
+      <DependentUpon>Following.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\Following.aspx.designer.cs">
+      <DependentUpon>Following.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog\Post.aspx.cs">
+      <DependentUpon>Post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\Post.aspx.designer.cs">
+      <DependentUpon>Post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
     </Compile>
     <Compile Include="new_main_master.Master.cs">
       <DependentUpon>new_main_master.Master</DependentUpon>
@@ -130,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="new_main_master.Master" />
+    <Content Include="Blog\BlogMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -169,7 +224,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

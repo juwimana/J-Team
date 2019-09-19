@@ -1,6 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="EagleConnect.aspx.cs" Inherits="main_master.WebForm3" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
 </asp:Content>
+
+<asp:Content ContentPlaceHolderID="branding" runat="server">
+    <h3>EagleConnect</h3>
+    <strong>EC</strong>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="navigation" runat="server">
+    
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <div class="card mb-3" style="max-width: 100%;">
         <div class="row no-gutters">
