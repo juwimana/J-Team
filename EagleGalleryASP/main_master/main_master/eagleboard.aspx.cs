@@ -28,10 +28,6 @@ namespace main_master
             convert_rows_to_string_and_publish(ref all_rows);
 
 
-
-
-
-
         }
 
         void convert_rows_to_string_and_publish(ref List<data_row> data_rows) {
@@ -79,9 +75,6 @@ namespace main_master
         string row_string = "";
         string link;
         
-
-
-
         public data_row(string in_board_id, string in_title, DateTime in_date, string in_link) {
             title = in_title;
             date = in_date;
@@ -102,14 +95,6 @@ namespace main_master
         public string get_board_id() {
             return board_id;
         }
-
-
-
-
-
-
-
-
 
 
     }
