@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="main_master.WebForm1" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">'
+<asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
     <title>Eagle Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="thumbnail-gallery.css">
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="branding" runat="server">
@@ -395,4 +397,8 @@
         </div>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
 </asp:Content>

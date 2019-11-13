@@ -1,5 +1,4 @@
 
-<style type="text/css" >
 .form-style-1 {
     margin: 10px auto;
     max-width: 400px;
@@ -94,9 +93,6 @@ select {
     color: red;
 }
 
-</style >
-
-<style type="text/css" >
 .form-style-2 {
     max-width: 500px;
     padding: 20px 12px 10px 20px;
@@ -188,9 +184,7 @@ select {
         color: #fff;
     }
 
-</style >
 
-<style type="text/css" >
 .form-style-3 {
     max-width: 400px;
     margin: 50px auto;
@@ -311,4 +305,4 @@ select {
         color: #fff;
     }
 
-</style >
+

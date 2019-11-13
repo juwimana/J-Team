@@ -50,20 +50,9 @@ namespace main_master.Utility
         protected void button_rebuild_Click(object sender, EventArgs e) {
             string path = System.Web.HttpContext.Current.Server.MapPath(@"~/sql/database_build_query.sql");
             string q = File.ReadAllText(path);
-            string output = "";
-            SqlDataReader reader = sql.SqlUtil.ExecuteReader(q);
-
-            while (reader.Read())
-            {
-                output += reader.GetString(0) + '\n';
-
-
-            }
-            label_dump.Text = output;
-
-
-
+            SqlUtil.ExecuteNonQuery(q);
         }
+
         protected void button_query_Click(object sender, EventArgs e)
         {
 
@@ -85,6 +74,8 @@ namespace main_master.Utility
             
             }
             label_dump.Text = output;
+
+            reader.Close();
         }
 
 

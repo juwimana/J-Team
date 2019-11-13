@@ -12,12 +12,14 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="navigation" runat="server">
+    <% if (Session["loggedIn"] != null) { %>
     <li>
         <a href="Post.aspx">
             <i class="fas fa-edit"></i>
             Post
         </a>
     </li>
+    <% } %>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="content_place_holder_body" runat="server">

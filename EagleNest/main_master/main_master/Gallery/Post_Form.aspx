@@ -2,6 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">'
     <title>Eagle Gallery</title>
+    
+     <link href="../css/Gallery_Post_Form.css" type="text/css" rel="stylesheet" />
+    
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="branding" runat="server">

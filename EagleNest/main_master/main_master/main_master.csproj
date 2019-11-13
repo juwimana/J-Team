@@ -80,8 +80,11 @@
     <Content Include="Blog\Post.aspx" />
     <Content Include="Blog\User.aspx" />
     <Content Include="Blog\View.aspx" />
+    <Content Include="css\Gallery_Post_Form.css" />
     <Content Include="css\style5.css" />
     <Content Include="Board\Main.aspx" />
+    <Content Include="Gallery\Archive.aspx" />
+    <Content Include="Gallery\Post_Form.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\1.jpg" />
     <Content Include="images\2.jpg" />
@@ -105,6 +108,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="Main.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="scripts\jquery-3.4.1.js" />
     <Content Include="sql\droptables.sql" />
     <Content Include="sql\database_build_query.sql" />
     <Content Include="sql\pop_users.sql" />
@@ -116,6 +120,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Gallery\Archive.aspx.cs">
+      <DependentUpon>Archive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\Archive.aspx.designer.cs">
+      <DependentUpon>Archive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Post_Form.aspx.cs">
+      <DependentUpon>Post_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\Post_Form.aspx.designer.cs">
+      <DependentUpon>Post_Form.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

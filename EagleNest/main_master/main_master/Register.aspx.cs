@@ -1,5 +1,7 @@
-﻿using System;
+﻿using main_master.sql;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +13,24 @@ namespace main_master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["loggedIn"] != null)
+            {
+                Response.Redirect("Main.aspx");
+            }
+        }
 
+        protected void submit_Click(object sender, EventArgs e)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@email", email.Text));
+            parameters.Add(new SqlParameter("@fname", fname.Text));
+            parameters.Add(new SqlParameter("@lname", lname.Text));
+            parameters.Add(new SqlParameter("@password", password.Text));
+            int rows =SqlUtil.ExecuteNonQuery("INSERT INTO User_Main (Email, User_Type, Fname, Lname, Last_Login, Password) VALUES (@email, 2, @fname, @lname, GETDATE(), @password)", parameters);
+            if (rows == 1)
+            {
+                Response.Redirect("Main.aspx");
+            }
         }
     }
 }

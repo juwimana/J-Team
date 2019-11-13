@@ -4,33 +4,6 @@
 -- ****************** SqlDBM: Microsoft SQL Server ******************
 -- ******************************************************************
 
--- ************************************** [dbo].[User_Main]
-
-CREATE TABLE [dbo].[User_Main]
-(
- [Email]           nvarchar(50) NOT NULL ,
- [ID_Num]          uniqueidentifier DEFAULT NEWSEQUENTIALID(),
- [Name]            varchar(50) NOT NULL ,
- [Major]           varchar(20) NOT NULL ,
- [Classification]  varchar(15) NOT NULL ,
- [User_Type]       tinyint NOT NULL ,
- [Last_Login]      datetime NOT NULL ,
- [Phone]           varchar(15) NULL ,
- [User_Img]        image NULL ,
- [Age]             tinyint NULL ,
- [Org_Affiliation] nvarchar(50) NULL ,
- [Banned]          bit DEFAULT 0,
- [Password]        varchar(100) NOT NULL,
-
-
- CONSTRAINT [PK_table_3] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
- CONSTRAINT [FK_User_Type] FOREIGN KEY ([User_Type])  REFERENCES [User_Type]([Type])
-);
-GO
-
-
-
-
 -- ************************************** [dbo].[User_Type]
 
 CREATE TABLE [dbo].[User_Type]
@@ -40,11 +13,39 @@ CREATE TABLE [dbo].[User_Type]
 
   CONSTRAINT [PK_User_Type] PRIMARY KEY CLUSTERED ([Type] ASC)
 );
-GO
 
-INSERT INTO User_Type (Type, Description) VALUES (0, 'Admin');
-INSERT INTO User_Type (Type, Description) VALUES (1, 'Moderator');
-INSERT INTO User_Type (Type, Description) VALUES (2, 'User');
+INSERT INTO User_Type ([Type], [Description]) VALUES (0, 'Admin');
+INSERT INTO User_Type ([Type], [Description]) VALUES (1, 'Moderator');
+INSERT INTO User_Type ([Type], [Description]) VALUES (2, 'User');
+
+-- ************************************** [dbo].[User_Main]
+
+CREATE TABLE [dbo].[User_Main]
+(
+ [Email]           nvarchar(50) NOT NULL ,
+ [ID_Num]          uniqueidentifier DEFAULT NEWSEQUENTIALID(),
+ [Fname]           varchar(20) NOT NULL ,
+ [Lname]           varchar(20) NOT NULL ,
+ [Major]           varchar(20) NULL ,
+ [Classification]  varchar(15) NULL ,
+ [User_Type]       tinyint NOT NULL ,
+ [Last_Login]      datetime NOT NULL ,
+ [Phone]           varchar(15) NULL ,
+ [User_Img]        image NULL ,
+ [Birthday]        date NULL ,
+ [Org_Affiliation] nvarchar(50) NULL ,
+ [Banned]          bit DEFAULT 0,
+ [Password]        varchar(100) NOT NULL,
+
+
+ CONSTRAINT [PK_table_3] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
+ CONSTRAINT [FK_User_Type] FOREIGN KEY ([User_Type])  REFERENCES [dbo].[User_Type]([Type]),
+ CONSTRAINT [Unique_Email] UNIQUE (Email)
+);
+--GO
+
+
+
 
 
 
@@ -66,7 +67,7 @@ CREATE TABLE [dbo].[User_Company]
 
  CONSTRAINT [PK_User_Company] PRIMARY KEY CLUSTERED ([CompanyID] ASC)
 );
-GO
+--GO
 
 
 
@@ -98,7 +99,7 @@ CREATE TABLE [dbo].[User_SAF]
  CONSTRAINT [PK_User_SAF] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
  CONSTRAINT [FK_93] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_Main]([Email], [ID_Num])
 );
-GO
+--GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_93] ON [dbo].[User_SAF]
@@ -106,39 +107,13 @@ CREATE NONCLUSTERED INDEX [fkIdx_93] ON [dbo].[User_SAF]
   [Email] ASC,
   [ID_Num] ASC
  )
-
-GO
-
+--GO
 
 
 
 
 
 
--- ************************************** [User_EBL]
-
-CREATE TABLE [User_EBL]
-(
- [Email]     nvarchar(50) NOT NULL ,
- [ID_Num]    uniqueidentifier NOT NULL ,
- [Following] int NOT NULL ,
- [Followers] int NOT NULL ,
- [Post_Amnt] int NOT NULL ,
-
-
- CONSTRAINT [PK_User_EBL] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
- CONSTRAINT [FK_136] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_Main]([Email], [ID_Num])
-);
-GO
-
-
-CREATE NONCLUSTERED INDEX [fkIdx_136] ON [User_EBL]
- (
-  [Email] ASC,
-  [ID_Num] ASC
- )
-
-GO
 
 
 
@@ -165,7 +140,7 @@ CREATE TABLE [Gallery_Post]
  CONSTRAINT [PK_Gallery_Post] PRIMARY KEY CLUSTERED ([GpostID] ASC),
  CONSTRAINT [FK_240] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_Main]([Email], [ID_Num])
 );
-GO
+--GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_240] ON [Gallery_Post]
@@ -174,7 +149,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_240] ON [Gallery_Post]
   [ID_Num] ASC
  )
 
-GO
+--GO
 
 
 
@@ -203,7 +178,7 @@ CREATE TABLE [Board_Post]
  CONSTRAINT [PK_Board_Post] PRIMARY KEY CLUSTERED ([BpostID] ASC),
  CONSTRAINT [FK_193] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_Main]([Email], [ID_Num])
 );
-GO
+--GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_193] ON [Board_Post]
@@ -212,7 +187,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_193] ON [Board_Post]
   [ID_Num] ASC
  )
 
-GO
+--GO
 
 
 
@@ -235,7 +210,7 @@ CREATE TABLE [Votes]
  CONSTRAINT [FK_222] FOREIGN KEY ([BpostID])  REFERENCES [Board_Post]([BpostID]),
  CONSTRAINT [UID] FOREIGN KEY ([Email],[ID_Num]) REFERENCES [dbo].[User_Main]([Email],[ID_Num])
 );
-GO
+--GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_222] ON [Votes]
@@ -243,7 +218,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_222] ON [Votes]
   [VoteID] ASC
  )
 
-GO
+--GO
 
 
 
@@ -272,7 +247,7 @@ CREATE TABLE [dbo].[Job_Posting]
  CONSTRAINT [FK_109] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID]),
  CONSTRAINT [FK_99] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_SAF]([Email], [ID_Num])
 );
-GO
+--GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_109] ON [dbo].[Job_Posting]
@@ -280,7 +255,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_109] ON [dbo].[Job_Posting]
   [CompanyID] ASC
  )
 
-GO
+--GO
 
 CREATE NONCLUSTERED INDEX [fkIdx_99] ON [dbo].[Job_Posting]
  (
@@ -288,7 +263,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_99] ON [dbo].[Job_Posting]
   [ID_Num] ASC
  )
 
-GO
+--GO
 
 
 
@@ -321,7 +296,7 @@ CREATE TABLE [dbo].[Intern_Posting]
  CONSTRAINT [FK_104] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_SAF]([Email], [ID_Num]),
  CONSTRAINT [FK_112] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID])
 );
-GO
+--GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_104] ON [dbo].[Intern_Posting]
@@ -330,14 +305,14 @@ CREATE NONCLUSTERED INDEX [fkIdx_104] ON [dbo].[Intern_Posting]
   [ID_Num] ASC
  )
 
-GO
+--GO
 
 CREATE NONCLUSTERED INDEX [fkIdx_112] ON [dbo].[Intern_Posting]
  (
   [CompanyID] ASC
  )
 
-GO
+--GO
 
 
 
@@ -354,9 +329,9 @@ CREATE TABLE [Following]
 
 
  CONSTRAINT [PK_Following] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
- CONSTRAINT [FK_151] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_EBL]([Email], [ID_Num])
+ CONSTRAINT [FK_151] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
 );
-GO
+--GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_151] ON [Following]
@@ -365,7 +340,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_151] ON [Following]
   [ID_Num] ASC
  )
 
-GO
+--GO
 
 
 
@@ -382,9 +357,9 @@ CREATE TABLE [Followers]
 
 
  CONSTRAINT [PK_Followers] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [Email] ASC),
- CONSTRAINT [FK_146] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_EBL]([Email], [ID_Num])
+ CONSTRAINT [FK_146] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
 );
-GO
+--GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_146] ON [Followers]
@@ -393,7 +368,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_146] ON [Followers]
   [ID_Num] ASC
  )
 
-GO
+--GO
 
 
 
@@ -417,9 +392,9 @@ CREATE TABLE [Blog_Post]
 
 
  CONSTRAINT [PK_Blog_Post] PRIMARY KEY CLUSTERED ([BlogID] ASC),
- CONSTRAINT [FK_165] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_EBL]([Email], [ID_Num])
+ CONSTRAINT [FK_165] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
 );
-GO
+--GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_165] ON [Blog_Post]
@@ -428,7 +403,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_165] ON [Blog_Post]
   [ID_Num] ASC
  )
 
-GO
+--GO
 
 
 
@@ -440,7 +415,7 @@ CREATE TABLE [Tags]
  [Tag]        nvarchar(20) NOT NULL,
 
  CONSTRAINT [FK_BlogID] FOREIGN KEY ([BlogID]) REFERENCES [Blog_Post]([BlogID])
-)
+);
 
 
 
@@ -459,9 +434,9 @@ CREATE TABLE [Post_Comment]
 
  CONSTRAINT [PK_Post_Comment] PRIMARY KEY CLUSTERED ([BlogID] ASC),
  CONSTRAINT [FK_180] FOREIGN KEY ([BlogID])  REFERENCES [Blog_Post]([BlogID]),
- CONSTRAINT [FK_184] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_EBL]([Email], [ID_Num])
+ CONSTRAINT [FK_184] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
 );
-GO
+--GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_180] ON [Post_Comment]
@@ -469,7 +444,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_180] ON [Post_Comment]
   [BlogID] ASC
  )
 
-GO
+--GO
 
 CREATE NONCLUSTERED INDEX [fkIdx_184] ON [Post_Comment]
  (
@@ -477,4 +452,4 @@ CREATE NONCLUSTERED INDEX [fkIdx_184] ON [Post_Comment]
   [ID_Num] ASC
  )
 
-GO
+--GO

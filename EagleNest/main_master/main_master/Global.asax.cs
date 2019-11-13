@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using main_master.sql;
+using System.Web.UI;
 
 namespace main_master
 {
@@ -16,6 +17,14 @@ namespace main_master
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             SqlUtil.init();
+
+            string jqueryVersion = "3.4.1";
+            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", new ScriptResourceDefinition
+            {
+                Path = "~/scripts/jquery-" + jqueryVersion + ".js",
+                CdnPath = "https://cdnjs.cloudflare.com/ajax/libs/jquery/" + jqueryVersion + "/jquery.min.js",
+                CdnDebugPath = "https://cdnjs.cloudflare.com/ajax/libs/jquery/" + jqueryVersion + "/jquery.js"
+            });
         }
 
         protected void Session_Start(object sender, EventArgs e)

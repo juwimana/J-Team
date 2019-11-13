@@ -15,12 +15,14 @@
     <h1 class="text-center">Login</h1>
     <form runat="server">
         <div class="form-group">
-            <label for="email">Email:</label>
-            <asp:Textbox class="form-control" id="email" name="email" type="text" runat="server" />
+            <label for="email">Email:<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="email" ErrorMessage="Email is required." ForeColor="#CC0000"></asp:RequiredFieldValidator>
+            </label>
+            &nbsp;<asp:Textbox class="form-control" id="email" name="email" type="text" runat="server" />
         </div>
         <div class="form-group">
-            <label for="password">Password:</label>
-            <asp:Textbox class="form-control" id="password" name="email" type="password" runat="server" />
+            <label for="password">Password:<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="password" ErrorMessage="Password is required." ForeColor="#CC0000"></asp:RequiredFieldValidator>
+            </label>
+            &nbsp;<asp:Textbox class="form-control" id="password" name="email" type="password" runat="server" />
         </div>
         <asp:Button class="btn btn-primary" id="submit" Tsext="Submit" runat="server" OnClick="submit_Click" />
     </form>
