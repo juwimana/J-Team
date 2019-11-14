@@ -170,7 +170,6 @@ CREATE TABLE [Board_Post]
  [Date]        datetime NOT NULL ,
  [Expiration]  datetime NOT NULL ,
  [Tags]        nvarchar(400) NULL ,
- [Attachments] nvarchar(400) NOT NULL ,
  [Hidden]      bit DEFAULT 0 ,
  [Mod_Status]  nvarchar(50) NULL ,
 
