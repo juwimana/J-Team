@@ -34,6 +34,20 @@ namespace main_master
 
         }
 
+        protected void preview_give_button_click(object sender, EventArgs e) {
+
+            
+            
+            Session.Add("title", give_title_textbox.Text);
+            Session.Add("description", give_desc_textarea.Value);
+            //Response.Write(test);
+
+            Response.Redirect("new_post.aspx");
+            
+
+        
+        }
+
         void convert_rows_to_string_and_publish(ref List<data_row> data_rows)
         {
             

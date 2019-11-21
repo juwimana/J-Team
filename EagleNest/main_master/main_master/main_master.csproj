@@ -80,6 +80,7 @@
     <Content Include="Blog\Post.aspx" />
     <Content Include="Blog\User.aspx" />
     <Content Include="Blog\View.aspx" />
+    <Content Include="Board\new_post.aspx" />
     <Content Include="css\Gallery_Post_Form.css" />
     <Content Include="css\style5.css" />
     <Content Include="Board\Main.aspx" />
@@ -120,6 +121,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Board\new_post.aspx.cs">
+      <DependentUpon>new_post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\new_post.aspx.designer.cs">
+      <DependentUpon>new_post.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Gallery\Archive.aspx.cs">
       <DependentUpon>Archive.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
