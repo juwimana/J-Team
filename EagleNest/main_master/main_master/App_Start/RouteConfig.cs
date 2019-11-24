@@ -16,6 +16,7 @@ namespace main_master
             routes.MapPageRoute("ViewUser", "Blog/User/{UserId}", "~/Blog/User.aspx");
             routes.MapPageRoute("ViewPost", "Blog/View/{PostId}", "~/Blog/View.aspx");
             routes.MapPageRoute("ViewBoardPost", "Board/View/{BpostID}", "~/Board/View.aspx");
+            routes.MapPageRoute("EditPost", "Blog/Edit/{PostId}", "~/Blog/Edit.aspx");
         }
     }
 }

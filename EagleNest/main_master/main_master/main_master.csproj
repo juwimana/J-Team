@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Blog\Edit.aspx" />
     <Content Include="Blog\Main.aspx" />
     <Content Include="Blog\Post.aspx" />
     <Content Include="Blog\PostNotFound.aspx" />
@@ -127,6 +128,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Blog\BlogPost.cs" />
     <Compile Include="Blog\Comment.cs" />
+    <Compile Include="Blog\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Blog\PostNotFound.aspx.cs">
       <DependentUpon>PostNotFound.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

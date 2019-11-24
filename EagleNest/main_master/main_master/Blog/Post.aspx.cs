@@ -36,9 +36,9 @@ namespace main_master.Blog
                     foreach (string tag in tags_array)
                     {
                         List<SqlParameter> tag_parameters = new List<SqlParameter>();
-                        tag_parameters.Add(new SqlParameter("@blogid", blogID));
-                        tag_parameters.Add(new SqlParameter("@tag", tag));
-                        rows = SqlUtil.ExecuteNonQuery("INSERT INTO Tags (BlogID, Tag) VALUES (@blogid, @tag)");
+                        tag_parameters.Add(new SqlParameter("blogid", blogID));
+                        tag_parameters.Add(new SqlParameter("tag", tag));
+                        rows = SqlUtil.ExecuteNonQuery("INSERT INTO Tags (BlogID, Tag) VALUES (@blogid, @tag)", tag_parameters);
                     }
                 }
                 Response.Redirect("View/" + blogID);

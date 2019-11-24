@@ -6,9 +6,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <div class="text-center">
         <h1><%= name %></h1>
+        <form runat="server">
         <% if (Session["loggedIn"] != null && Session["uid"].ToString() != uid) { %>
-        <asp:Button ID="follow" CssClass="btn btn-primary" Text="Follow" OnClick="follow_Click" runat="server" />
+            <% if (followingUser) { %>
+            <asp:Button ID="unfollow" CssClass="btn btn-primary" Text="Unfollow" OnClick="unfollow_Click" runat="server" />
+            <% } else { %>
+            <asp:Button ID="follow" CssClass="btn btn-primary" Text="Follow" OnClick="follow_Click" runat="server" />
+            <% } %>
         <% } %>
+        </form>
     </div>
     <ul class="nav nav-tabs">
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#posts">Posts</a></li>
@@ -30,10 +36,26 @@
             </div>
         </div>
         <div id="following" class="tab-pane fade">
-
+            <div class="column-card">
+                <% foreach (var user in following) { %>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href='<%= ResolveUrl("User/" + user.uid) %>'><%= user.name %></a></h5>
+                    </div>
+                </div>
+                <% } %>
+            </div>
         </div>
         <div id="followers" class="tab-pane fade">
-
+            <div class="column-card">
+                <% foreach (var user in followers) { %>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href='<%= ResolveUrl("User/" + user.uid) %>'><%= user.name %></a></h5>
+                    </div>
+                </div>
+                <% } %>
+            </div>
         </div>
     </div>
 </asp:Content>
