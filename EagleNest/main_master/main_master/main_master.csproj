@@ -51,6 +51,7 @@
     <Reference Include="System.Data.SqlClient, Version=4.6.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.7.0\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -74,14 +75,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Blog\Edit.aspx" />
     <Content Include="Blog\Main.aspx" />
     <Content Include="Blog\Post.aspx" />
     <Content Include="Blog\PostNotFound.aspx" />
     <Content Include="Blog\User.aspx" />
     <Content Include="Blog\UserNotFound.aspx" />
     <Content Include="Blog\View.aspx" />
+    <Content Include="Board\404.aspx" />
     <Content Include="Board\new_post.aspx" />
+    <Content Include="Board\View.aspx" />
     <Content Include="css\Gallery_Post_Form.css" />
+    <Content Include="css\select_josh_styles.css" />
     <Content Include="css\style5.css" />
     <Content Include="Board\Main.aspx" />
     <Content Include="Gallery\Archive.aspx" />
@@ -108,8 +113,11 @@
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Main.aspx" />
+    <Content Include="Moderation\Main.aspx" />
+    <Content Include="Moderation\Status.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="Report.aspx" />
     <Content Include="sql\droptables.sql" />
     <Content Include="sql\database_build_query.sql" />
     <Content Include="sql\pop_users.sql" />
@@ -123,6 +131,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Blog\BlogPost.cs" />
     <Compile Include="Blog\Comment.cs" />
+    <Compile Include="Blog\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Blog\PostNotFound.aspx.cs">
       <DependentUpon>PostNotFound.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -138,12 +153,26 @@
       <DependentUpon>UserNotFound.aspx</DependentUpon>
     </Compile>
     <Compile Include="Blog\UserProfile.cs" />
+    <Compile Include="Board\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Board\new_post.aspx.cs">
       <DependentUpon>new_post.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Board\new_post.aspx.designer.cs">
       <DependentUpon>new_post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Board\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connect\Connect.cs" />
     <Compile Include="Gallery\Archive.aspx.cs">
@@ -185,6 +214,21 @@
     <Compile Include="Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Moderation\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderation\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderation\Report.cs" />
+    <Compile Include="Moderation\Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderation\Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,6 +242,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
     </Compile>
     <Compile Include="sql\SqlUtil.cs" />
     <Compile Include="sql\access_database.cs" />

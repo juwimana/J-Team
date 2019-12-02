@@ -21,6 +21,19 @@ namespace main_master
 
         protected void submit_Click(object sender, EventArgs e)
         {
+            Error.Text = "";
+            List<SqlParameter> check_parameters = new List<SqlParameter>();
+            check_parameters.Add(new SqlParameter("@email", email.Text));
+            SqlDataReader reader = SqlUtil.ExecuteReader("SELECT * FROM User_Main WHERE Email = @email", check_parameters);
+            if (reader.Read())
+            {
+                Error.Text = "A user with that email alreader exists.";
+                reader.Close();
+                return;
+            }
+
+            reader.Close();
+
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@email", email.Text));
             parameters.Add(new SqlParameter("@fname", fname.Text));

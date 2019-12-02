@@ -13,19 +13,19 @@
 
 <asp:Content ContentPlaceHolderID="navigation" runat="server">
     <li>
-        <a href="Main.aspx">
+        <a href='<%= ResolveUrl("Main.aspx") %>'">
             Blog Homepage
         </a>
     </li>
     <% if (Session["loggedIn"] != null) { %>
     <li>
-        <a href="Post.aspx">
+        <a href='<%= ResolveUrl("Post.aspx") %>'>
             <i class="fas fa-edit"></i>
             Post
         </a>
     </li>
     <li>
-        <a href='User/<%= Session["uid"] %>'>
+        <a href='<%= ResolveUrl("User/" + Session["uid"]) %>'>
             User Page
         </a>
     </li>

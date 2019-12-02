@@ -16,7 +16,7 @@ namespace main_master.Board
 
         }
 
-        protected void Submit_Click()
+        protected void Submit_Click(object sender, EventArgs e)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@Title", title.Text));

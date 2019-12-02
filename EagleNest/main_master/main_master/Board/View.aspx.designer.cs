@@ -7,407 +7,506 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace main_master
+namespace main_master.Board
 {
 
 
-    public partial class eagleboard
+    public partial class View
     {
 
         /// <summary>
-        /// all_lit control.
+        /// view_title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal all_lit;
+        protected global::System.Web.UI.WebControls.Label view_title;
 
         /// <summary>
-        /// gives_lit control.
+        /// view_description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal gives_lit;
+        protected global::System.Web.UI.WebControls.Label view_description;
 
         /// <summary>
-        /// project_lit control.
+        /// view_image_label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal project_lit;
+        protected global::System.Web.UI.WebControls.Label view_image_label;
 
         /// <summary>
-        /// poll_lit control.
+        /// view_image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal poll_lit;
+        protected global::System.Web.UI.WebControls.Image view_image;
 
         /// <summary>
-        /// give_title_textbox control.
+        /// option1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox give_title_textbox;
+        protected global::System.Web.UI.WebControls.RadioButton option1;
 
         /// <summary>
-        /// give_title_text_req control.
+        /// option2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator give_title_text_req;
+        protected global::System.Web.UI.WebControls.RadioButton option2;
 
         /// <summary>
-        /// give_desc_textbox control.
+        /// option3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox give_desc_textbox;
+        protected global::System.Web.UI.WebControls.RadioButton option3;
 
         /// <summary>
-        /// give_desc_text_req control.
+        /// option4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator give_desc_text_req;
+        protected global::System.Web.UI.WebControls.RadioButton option4;
 
         /// <summary>
-        /// give_image_upload control.
+        /// option5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload give_image_upload;
+        protected global::System.Web.UI.WebControls.RadioButton option5;
 
         /// <summary>
-        /// preview_give_button control.
+        /// option6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button preview_give_button;
+        protected global::System.Web.UI.WebControls.RadioButton option6;
 
         /// <summary>
-        /// project_title_textbox control.
+        /// option7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox project_title_textbox;
+        protected global::System.Web.UI.WebControls.RadioButton option7;
 
         /// <summary>
-        /// RequiredFieldValidator5 control.
+        /// option8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.RadioButton option8;
 
         /// <summary>
-        /// project_desc_textbox control.
+        /// option9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox project_desc_textbox;
+        protected global::System.Web.UI.WebControls.RadioButton option9;
 
         /// <summary>
-        /// RequiredFieldValidator6 control.
+        /// option10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        protected global::System.Web.UI.WebControls.RadioButton option10;
 
         /// <summary>
-        /// project_image_upload control.
+        /// submit_vote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload project_image_upload;
+        protected global::System.Web.UI.WebControls.Button submit_vote;
 
         /// <summary>
-        /// preview_project_button control.
+        /// poll_option_bar1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button preview_project_button;
+        protected global::System.Web.UI.WebControls.Label poll_option_bar1;
 
         /// <summary>
-        /// poll_title_textbox control.
+        /// poll_option_desc1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox poll_title_textbox;
+        protected global::System.Web.UI.WebControls.Label poll_option_desc1;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// poll_option_percent1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label poll_option_percent1;
 
         /// <summary>
-        /// poll_description_textbox control.
+        /// poll_option_votes1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox poll_description_textbox;
+        protected global::System.Web.UI.WebControls.Label poll_option_votes1;
 
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// poll_option_bar2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.Label poll_option_bar2;
 
         /// <summary>
-        /// poll_image_upload control.
+        /// poll_option_desc2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload poll_image_upload;
+        protected global::System.Web.UI.WebControls.Label poll_option_desc2;
 
         /// <summary>
-        /// option_label_1 control.
+        /// poll_option_percent2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_label_1;
+        protected global::System.Web.UI.WebControls.Label poll_option_percent2;
 
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// poll_option_votes2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.Label poll_option_votes2;
 
         /// <summary>
-        /// option_textbox_1 control.
+        /// poll_option_bar3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox option_textbox_1;
+        protected global::System.Web.UI.WebControls.Label poll_option_bar3;
 
         /// <summary>
-        /// option_label_2 control.
+        /// poll_option_desc3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_label_2;
+        protected global::System.Web.UI.WebControls.Label poll_option_desc3;
 
         /// <summary>
-        /// RequiredFieldValidator4 control.
+        /// poll_option_percent3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.Label poll_option_percent3;
 
         /// <summary>
-        /// option_textbox_2 control.
+        /// poll_option_votes3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox option_textbox_2;
+        protected global::System.Web.UI.WebControls.Label poll_option_votes3;
 
         /// <summary>
-        /// option_label_3 control.
+        /// poll_option_bar4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_label_3;
+        protected global::System.Web.UI.WebControls.Label poll_option_bar4;
 
         /// <summary>
-        /// option_textbox_3 control.
+        /// poll_option_desc4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox option_textbox_3;
+        protected global::System.Web.UI.WebControls.Label poll_option_desc4;
 
         /// <summary>
-        /// option_label_4 control.
+        /// poll_option_percent4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_label_4;
+        protected global::System.Web.UI.WebControls.Label poll_option_percent4;
 
         /// <summary>
-        /// option_textbox_4 control.
+        /// poll_option_votes4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox option_textbox_4;
+        protected global::System.Web.UI.WebControls.Label poll_option_votes4;
 
         /// <summary>
-        /// option_label_5 control.
+        /// poll_option_bar5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_label_5;
+        protected global::System.Web.UI.WebControls.Label poll_option_bar5;
 
         /// <summary>
-        /// option_textbox_5 control.
+        /// poll_option_desc5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox option_textbox_5;
+        protected global::System.Web.UI.WebControls.Label poll_option_desc5;
 
         /// <summary>
-        /// option_label_6 control.
+        /// poll_option_percent5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_label_6;
+        protected global::System.Web.UI.WebControls.Label poll_option_percent5;
 
         /// <summary>
-        /// option_textbox_6 control.
+        /// poll_option_votes5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox option_textbox_6;
+        protected global::System.Web.UI.WebControls.Label poll_option_votes5;
 
         /// <summary>
-        /// option_label_7 control.
+        /// poll_option_bar6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_label_7;
+        protected global::System.Web.UI.WebControls.Label poll_option_bar6;
 
         /// <summary>
-        /// option_textbox_7 control.
+        /// poll_option_desc6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox option_textbox_7;
+        protected global::System.Web.UI.WebControls.Label poll_option_desc6;
 
         /// <summary>
-        /// option_label_8 control.
+        /// poll_option_percent6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_label_8;
+        protected global::System.Web.UI.WebControls.Label poll_option_percent6;
 
         /// <summary>
-        /// option_textbox_8 control.
+        /// poll_option_votes6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox option_textbox_8;
+        protected global::System.Web.UI.WebControls.Label poll_option_votes6;
 
         /// <summary>
-        /// option_label_9 control.
+        /// poll_option_bar7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_label_9;
+        protected global::System.Web.UI.WebControls.Label poll_option_bar7;
 
         /// <summary>
-        /// option_textbox_9 control.
+        /// poll_option_desc7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox option_textbox_9;
+        protected global::System.Web.UI.WebControls.Label poll_option_desc7;
 
         /// <summary>
-        /// option_label_10 control.
+        /// poll_option_percent7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_label_10;
+        protected global::System.Web.UI.WebControls.Label poll_option_percent7;
 
         /// <summary>
-        /// option_textbox_10 control.
+        /// poll_option_votes7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox option_textbox_10;
+        protected global::System.Web.UI.WebControls.Label poll_option_votes7;
 
         /// <summary>
-        /// preview_poll_button control.
+        /// poll_option_bar8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button preview_poll_button;
+        protected global::System.Web.UI.WebControls.Label poll_option_bar8;
+
+        /// <summary>
+        /// poll_option_desc8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_desc8;
+
+        /// <summary>
+        /// poll_option_percent8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_percent8;
+
+        /// <summary>
+        /// poll_option_votes8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_votes8;
+
+        /// <summary>
+        /// poll_option_bar9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_bar9;
+
+        /// <summary>
+        /// poll_option_desc9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_desc9;
+
+        /// <summary>
+        /// poll_option_percent9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_percent9;
+
+        /// <summary>
+        /// poll_option_votes9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_votes9;
+
+        /// <summary>
+        /// poll_option_bar10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_bar10;
+
+        /// <summary>
+        /// poll_option_desc10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_desc10;
+
+        /// <summary>
+        /// poll_option_percent10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_percent10;
+
+        /// <summary>
+        /// poll_option_votes10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poll_option_votes10;
     }
 }

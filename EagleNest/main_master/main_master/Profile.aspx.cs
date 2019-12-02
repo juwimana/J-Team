@@ -15,33 +15,34 @@ namespace main_master
         {
             if (Session["loggedIn"] == null)
             {
-                Response.Redirect("Main.aspx");
-                return;
+                Response.Redirect("Login.aspx");
             }
 
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("uid", Session["uid"]));
-            SqlDataReader reader = SqlUtil.ExecuteReader("SELECT * FROM User_Main WHERE ID_Num = @uid", parameters);
-            if (!reader.Read()) //this should never happen
+            if (!IsPostBack)
             {
-                Response.Redirect("Main.aspx");
+                List<SqlParameter> parameters = new List<SqlParameter>();
+                parameters.Add(new SqlParameter("uid", Session["uid"]));
+                SqlDataReader reader = SqlUtil.ExecuteReader("SELECT * FROM User_Main WHERE ID_Num = @uid", parameters);
+                if (!reader.Read()) //this should never happen
+                {
+                    Response.Redirect("Main.aspx");
+                    reader.Close();
+                    return;
+                }
+
+                Uid.Text = reader["ID_Num"].ToString();
+                FirstName.Text = reader["Fname"].ToString();
+                LastName.Text = reader["Lname"].ToString();
+                Major.Text = reader["Major"].ToString();
+                Classification.SelectedValue = reader["Classification"].ToString();
+                Phone.Text = reader["Phone"].ToString();
+                OrgAffiliation.Text = reader["Org_Affiliation"].ToString();
                 reader.Close();
-                return;
+
+                Password.Text = "";
+                NewPassword.Text = "";
+                NewPassword2.Text = "";
             }
-
-            Uid.Text = reader["ID_Num"].ToString();
-            FirstName.Text = reader["Fname"].ToString();
-            LastName.Text = reader["Lname"].ToString();
-            Major.Text = reader["Major"].ToString();
-            Classification.SelectedValue = reader["Classification"].ToString();
-            Phone.Text = reader["Phone"].ToString();
-            OrgAffiliation.Text = reader["Org_Affiliation"].ToString();
-
-            Password.Text = "";
-            NewPassword.Text = "";
-            NewPassword2.Text = "";
-
-            reader.Close();
         }
 
         protected void GeneralSubmit_Click(object sender, EventArgs e)
@@ -78,7 +79,11 @@ namespace main_master
             parameters.Clear();
             parameters.Add(new SqlParameter("password", NewPassword.Text));
             parameters.Add(new SqlParameter("uid", Session["uid"]));
-            SqlUtil.ExecuteNonQuery("UPDATE User_Main SET Password = @password WHERE ID_Num = @uid");
+            SqlUtil.ExecuteNonQuery("UPDATE User_Main SET Password = @password WHERE ID_Num = @uid", parameters);
+
+            Password.Text = "";
+            NewPassword.Text = "";
+            NewPassword2.Text = "";
         }
     }
 }

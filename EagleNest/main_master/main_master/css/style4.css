@@ -16,6 +16,14 @@ p {
     color: #999;
 }
 
+.clickable-row:hover {
+    background-color: red;
+}
+
+
+
+
+
 a,
 a:hover,
 a:focus {

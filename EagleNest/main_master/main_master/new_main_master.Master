@@ -16,7 +16,7 @@
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <link href="css/style4.css" rel="stylesheet" type="text/css">
-    <link href="css/style5.css" rel="stylesheet" type="text/css" />
+    <!--- <link href="css/style5.css" rel="stylesheet" type="text/css" /> --!>
 
     <!--icon library -->
     <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh">
@@ -55,37 +55,6 @@
                 <asp:ContentPlaceHolder ID="navigation" runat="server">
                 </asp:ContentPlaceHolder>
 
-                <% if (Session["loggedIn"] == null) { %>
-                <li>
-                    <a href='<%= ResolveUrl("~/Login.aspx") %>'>Login</a>
-                </li>
-                <li>
-                    <a href='<%= ResolveUrl("~/Register.aspx") %>'>
-                        <i class="fas fa-user-plus"></i>
-                        Register
-                    </a>
-                </li>
-                <% } else { %>
-                <li>
-                    <a href='<%= ResolveUrl("~/Profile.aspx") %>'>Profile</a>
-                </li>
-                <li>
-                    <a href='<%= ResolveUrl("~/Logout.aspx") %>'>Logout</a>
-                </li>
-                <% if (Convert.ToInt32(Session["type"]) == 2) { %>
-                <li>
-                    <a href="#adminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
-                        <i class="fas fa-copy"></i>
-                        Admin
-                    </a>
-                </li>
-                <ul class="collapse list-unstyled bg-danger" id="adminSubmenu">
-                    <li>
-                        <a href='<%= ResolveUrl("~/Utility/admin.aspx")%>' class="bg-danger">Admin Utilities</a>
-                    </li>
-                </ul>
-                <% } %>
-                <% } %>
                 <li>
                     <a href="#exploreSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
                         <i class="fas fa-copy"></i>
@@ -110,6 +79,50 @@
                         <a href='<%= ResolveUrl("~/Board/Main.aspx") %>' class="bg-danger">Eagle Board</a>
                     </li>
                 </ul>
+
+                <% if (Session["loggedIn"] == null) { %>
+                <li>
+                    <a href='<%= ResolveUrl("~/Login.aspx") %>'>Login</a>
+                </li>
+                <li>
+                    <a href='<%= ResolveUrl("~/Register.aspx") %>'>
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                </li>
+                <% } else { %>
+                <li>
+                    <a href='<%= ResolveUrl("~/Profile.aspx") %>'>Profile</a>
+                </li>
+                <li>
+                    <a href='<%= ResolveUrl("~/Logout.aspx") %>'>Logout</a>
+                </li>
+                <% if (Convert.ToInt32(Session["type"]) == 0) { %>
+                <li>
+                    <a href="#adminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
+                        <i class="fas fa-copy"></i>
+                        Admin
+                    </a>
+                </li>
+                <ul class="collapse list-unstyled bg-danger" id="adminSubmenu">
+                    <li>
+                        <a href='<%= ResolveUrl("~/Utility/admin.aspx")%>' class="bg-danger">Admin Utilities</a>
+                    </li>
+                </ul>
+                <% } %>
+                <% if (Convert.ToInt32(Session["type"]) == 0 || Convert.ToInt32(Session["type"]) == 1) { %>
+                <li>
+                    <a href="#modSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
+                        Moderator
+                    </a>
+                </li>
+                <ul class="navbar-collapse list-unstyled bg-danger" id="modSubmenu">
+                    <li>
+                        <a href='<%= ResolveUrl("~/Moderation/Main.aspx") %>' class="bg-danger">Moderation</a>
+                    </li>
+                </ul>
+                <% } %>
+                <% } %>
             </ul>
         </nav>
 

@@ -34,8 +34,8 @@
             <div class="card">
                 <div class="card-header" id="headingthree">
                     <h2 class="mb-0">
-                        <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
-                            Populate User Database
+                        <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
+                            Populate User Database(pending fix)
                         </button>
                     </h2>
                 </div>
@@ -152,8 +152,8 @@
             <div class="card">
                 <div class="card-header" id="headingrebuild">
                     <h2 class="mb-0">
-                        <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapserebuild" aria-expanded="true" aria-controls="collapserebuild">
-                            Rebuild database from repository build script(in construction)
+                        <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapserebuild" aria-expanded="true" aria-controls="collapserebuild">
+                            Rebuild database from repository build script
                         </button>
                     </h2>
                 </div>

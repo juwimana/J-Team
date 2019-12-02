@@ -16,18 +16,45 @@ namespace main_master
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            require_login();
+
             build_data();
+
+            
+
+            if (Session["edit"] !=null) {
+                string loc = Session["last_tab"].ToString();
+                string loc2 = Session["last_radio"].ToString();
+
+                if (loc == "new-tab")
+                {
+                    give_title_textbox.Text = (string)Session["title"];
+                    give_desc_textbox.Text = (string)Session["description"];
+                    string s = "$(document).ready(function () {document.getElementById('" + loc + "').click();});";
+                    ClientScript.RegisterStartupScript(GetType(), "Javascript", s, true);
+                    loc = Session["last_radio"].ToString();
+                    string s2 = "$(document).ready(function () {document.getElementById('" + loc2 + "').click();});";
+                    ClientScript.RegisterStartupScript(GetType(), "Javascript", s2, true);
+
+                }
+                else {
+                    string s = "$(document).ready(function () {document.getElementById('" + loc + "').click();});";
+                    ClientScript.RegisterStartupScript(GetType(), "Javascript", s, true);
+                }
+                
+            }
+
+
+
+            
+
 
         }
 
         protected void preview_give_button_click(object sender, EventArgs e)
         {
+
             if (Page.IsValid) {
-
-               
-
-
-
 
 
                 System.IO.Stream fs = give_image_upload.PostedFile.InputStream;
@@ -35,14 +62,90 @@ namespace main_master
                 Byte[] bytes = br.ReadBytes((Int32)fs.Length);
                 Session.Add("image_array", bytes);
                 string str = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+
+
                 Session.Add("title", give_title_textbox.Text);
                 Session.Add("description", give_desc_textbox.Text);
                 Session.Add("image", str);
-//              
+                Session.Add("last_tab", "new-tab");
+                Session.Add("last_radio", "gives_radio");
+                Session.Add("board", 0);
+
                 Response.Redirect("new_post.aspx");
 
 
             }
+
+
+        }
+
+
+        protected void preview_project_button_click(object sender, EventArgs e) {
+
+            if (Page.IsValid)
+            {
+
+                System.IO.Stream fs = project_image_upload.PostedFile.InputStream;
+                System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
+                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                Session.Add("image_array", bytes);
+                string str = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+
+
+                Session.Add("title", give_title_textbox.Text);
+                Session.Add("description", give_desc_textbox.Text);
+                Session.Add("image", str);
+                Session.Add("last_tab", "new-tab");
+                Session.Add("last_radio", "project_radio");
+                Session.Add("board", 1);
+
+                Response.Redirect("new_post.aspx");
+
+
+            }
+
+
+
+        }
+
+        protected void preview_poll_button_click(object sender, EventArgs e) {
+
+
+            System.IO.Stream fs = poll_image_upload.PostedFile.InputStream;
+            System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
+            Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+            Session.Add("image_array", bytes);
+            string str = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+            List<string> options = new List<string>();
+
+            if (option_textbox_1.Text != null) { options.Add(option_textbox_1.Text); }
+            if (option_textbox_2.Text != null) { options.Add(option_textbox_2.Text); }
+            if (option_textbox_3.Text != null) { options.Add(option_textbox_3.Text); }
+            if (option_textbox_4.Text != null) { options.Add(option_textbox_4.Text); }
+            if (option_textbox_5.Text != null) { options.Add(option_textbox_5.Text); }
+            if (option_textbox_6.Text != null) { options.Add(option_textbox_6.Text); }
+            if (option_textbox_7.Text != null) { options.Add(option_textbox_7.Text); }
+            if (option_textbox_8.Text != null) { options.Add(option_textbox_8.Text); }
+            if (option_textbox_9.Text != null) { options.Add(option_textbox_9.Text); }
+            if (option_textbox_10.Text != null) { options.Add(option_textbox_10.Text); }
+
+
+
+
+
+            Session.Add("title", poll_title_textbox.Text);
+            Session.Add("description", poll_description_textbox.Text);
+            Session.Add("image", str);
+            Session.Add("last_tab", "new-tab");
+            Session.Add("last_radio", "poll_radio");
+            Session.Add("board", 2);
+            Session.Add("options", options);
+
+            Response.Redirect("new_post.aspx");
+
 
 
         }
@@ -101,13 +204,23 @@ namespace main_master
 
 
 
-                all_rows.Add(new data_row(board, reader.GetString(2), reader.GetDateTime(5), "http:this"));
+                all_rows.Add(new data_row(board, reader.GetString(2), reader.GetDateTime(5), (Guid)reader["BpostID"]));
                 
             }
 
             reader.Close();
             convert_rows_to_string_and_publish(ref all_rows);
 
+
+        }
+        protected void require_login()
+        {
+
+            if (Session["uid"] == null)
+            {
+                Response.Redirect("/login.aspx");
+
+            }
 
         }
 
@@ -122,13 +235,13 @@ namespace main_master
             string title;
             DateTime date;
             string row_string = "";
-            string link;
+            Guid bpostid;
 
-            public data_row(string in_board_id, string in_title, DateTime in_date, string in_link)
+            public data_row(string in_board_id, string in_title, DateTime in_date, Guid in_bpostid)
             {
                 title = in_title;
                 date = in_date;
-                link = in_link;
+                bpostid = in_bpostid;
                 board_id = in_board_id;
                 if (board_id.CompareTo("gives_board") == 0) { board = gives_title; }
                 else if (board_id.CompareTo("project_board") == 0) { board = project_title; }
@@ -137,7 +250,8 @@ namespace main_master
 
             public string get_row_string()
             {
-                row_string = @"<tr> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
+                string link = "view/" + bpostid.ToString();
+                row_string = @"<tr class=""clickable-row"" data-href=""" + link +  @"""> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
                 //creates a row of a bootstrap table in html
                 return row_string;
             }

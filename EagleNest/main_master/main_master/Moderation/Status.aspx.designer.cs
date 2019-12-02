@@ -7,47 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace main_master
-{
-
-
-    public partial class new_main_master
-    {
-
+namespace main_master.Moderation {
+    
+    
+    public partial class Status {
+        
         /// <summary>
-        /// content_place_holder_head control.
+        /// PostId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder content_place_holder_head;
-
+        protected global::System.Web.UI.WebControls.Label PostId;
+        
         /// <summary>
-        /// branding control.
+        /// ModStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder branding;
-
+        protected global::System.Web.UI.WebControls.DropDownList ModStatus;
+        
         /// <summary>
-        /// navigation control.
+        /// Submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder navigation;
-
-        /// <summary>
-        /// content_place_holder_body control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder content_place_holder_body;
+        protected global::System.Web.UI.WebControls.Button Submit;
     }
 }

@@ -17,6 +17,7 @@ namespace main_master
 
         protected void submit_Click(object sender, EventArgs e)
         {
+            Error.Text = "";
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@email", email.Text));
             parameters.Add(new SqlParameter("@password", password.Text)); //TODO: hash the password
@@ -30,6 +31,9 @@ namespace main_master
                 Session.Add("loggedIn", true);
                 reader.Close();
                 Response.Redirect("Main.aspx");   
+            } else
+            {
+                Error.Text = "A user with that email and password combination does not exist.";
             }
             reader.Close();
         }

@@ -1,0 +1,27 @@
+﻿body {
+}
+
+
+h5 {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+}
+
+image_c {
+
+    width:100%;
+
+
+
+}
+
+.clickable-row:hover {
+    background-color: lightpink;
+    cursor: pointer;
+}
+
+

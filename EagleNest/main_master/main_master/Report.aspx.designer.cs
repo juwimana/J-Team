@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace main_master.Blog {
+namespace main_master {
     
     
-    public partial class User {
+    public partial class Report {
         
         /// <summary>
-        /// unfollow control.
+        /// Comment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button unfollow;
+        protected global::System.Web.UI.WebControls.TextBox Comment;
         
         /// <summary>
-        /// follow control.
+        /// Submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button follow;
+        protected global::System.Web.UI.WebControls.Button Submit;
     }
 }
