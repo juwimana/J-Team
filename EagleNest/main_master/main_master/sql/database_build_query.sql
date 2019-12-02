@@ -242,6 +242,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_222] ON [Votes]
 
 CREATE TABLE [Job_Posting]
 (
+ [JobID]     uniqueidentifier DEFAULT NEWSEQUENTIALID(),
  [ID_Num]          uniqueidentifier NOT NULL ,
  [Position]        nvarchar(50) NOT NULL ,
  [College]			nvarchar(50) NOT NULL,
@@ -268,7 +269,7 @@ CREATE TABLE [Job_Posting]
  [Mod_Status] int DEFAULT 0 ,
 
 
- CONSTRAINT [PK_Job_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC),
+ CONSTRAINT [PK_Job_Posting] PRIMARY KEY CLUSTERED ([JobID] ASC),
  --CONSTRAINT [FK_99] FOREIGN KEY ([ID_Num])  REFERENCES [User_SAF]([ID_Num]),
  CONSTRAINT [FK_ModStatus2] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
@@ -299,6 +300,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_99] ON [Job_Posting]
 
 CREATE TABLE [Intern_Posting]
 (
+ [InternID]     uniqueidentifier DEFAULT NEWSEQUENTIALID(),
  [ID_Num]          uniqueidentifier NOT NULL ,
  [College]         nvarchar(50) NOT NULL ,
  [Major]           nvarchar(50) NOT NULL ,
@@ -323,7 +325,7 @@ CREATE TABLE [Intern_Posting]
  [Mod_Status] int DEFAULT 0 ,
 
 
- CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC),
+ CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([InternID] ASC),
  CONSTRAINT [FK_104] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
  CONSTRAINT [FK_ModStatus3] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
